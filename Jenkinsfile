@@ -56,3 +56,14 @@ pipeline {
       }
     }
   }
+  
+  post {
+    always {
+      // Send notification emails at the end of test and security scan stages
+      emailext body: "Pipeline ${currentBuild.result} - View logs: ${env.BUILD_URL}console",
+        subject: "Pipeline ${currentBuild.result}: ${env.JOB_NAME}",
+        to: "syed87244@gmail.com",
+        attachmentsPattern: '**/*.log'
+    }
+  }
+}
