@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-       	echo "building......"
+        echo "building......"
       }
     }
     stage('Unit and Integration Tests') {
@@ -17,7 +17,6 @@ pipeline {
       steps {
         // Integrate SonarQube to analyze the code
         echo "code......."
-        }
       }
     }
     stage('Security Scan') {
@@ -30,7 +29,6 @@ pipeline {
       steps {
         // Use Ansible to deploy the application to a staging server
         echo "deploying to staging..........."
-        }
       }
     }
     stage('Integration Tests on Staging') {
@@ -43,7 +41,6 @@ pipeline {
       steps {
         // Use Ansible to deploy the application to a production server
         echo "deploy........."
-        }
       }
     }
   }
