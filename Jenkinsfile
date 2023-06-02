@@ -40,7 +40,7 @@ pipeline {
     stage('Deploy to Production') {
       steps {
         // Use Ansible to deploy the application to a production server
-        echo "deployed........."
+        echo "Deployed........."
       }
     }
   }
