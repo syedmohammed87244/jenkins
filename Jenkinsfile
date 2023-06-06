@@ -9,37 +9,31 @@ pipeline {
     }
     stage('Unit and Integration Tests') {
       steps {
-        // Use JUnit to run unit tests
         echo "test....."
       }
     }
     stage('Code Analysis') {
       steps {
-        // Integrate SonarQube to analyze the code
         echo "code......."
       }
     }
     stage('Security Scan') {
       steps {
-        // Perform a security scan using OWASP ZAP
         echo "security scan..........."
       }
     }
     stage('Deploy to Staging') {
       steps {
-        // Use Ansible to deploy the application to a staging server
         echo "deploying to staging..........."
       }
     }
     stage('Integration Tests on Staging') {
       steps {
-        // Use Selenium to run integration tests on the staging environment
         echo "integrating tests........."
       }
     }
     stage('Deploy to Production') {
       steps {
-        // Use Ansible to deploy the application to a production server
         echo "Deploying........."
       }
     }
@@ -52,7 +46,7 @@ pipeline {
         subject: "Pipeline ${currentBuild.result}: ${env.JOB_NAME}",
         to: "syed87244@gmail.com",
         attachmentsPattern: '**/*.log',
-        attachLog: true // Attach logs to the email
+        attachLog: true
     }
   }
 }
