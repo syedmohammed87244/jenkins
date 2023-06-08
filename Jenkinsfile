@@ -102,7 +102,7 @@ pipeline {
                     emailext (
                         subject: 'Deploying to Production',
                         to: 'syed87244@gmail.com',
-                        body: 'Failure! Please check the logs.',
+                        body: 'Failure! Please check the logs',
                         attachLog: true
                     )
                 }
