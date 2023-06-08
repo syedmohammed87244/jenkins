@@ -89,6 +89,23 @@ pipeline {
             steps {
                 echo 'Deploying the application'
             }
+            post {
+                always {
+                    emailext (
+                        subject: 'Deploying to Production',
+                        to: 'syed87244@gmail.com',
+                        body: "Deployment completed SUCCESSFULLY.",
+                        attachLog: true
+                    )
+                }
+                failure {
+                    emailext (
+                        subject: 'Deploying to Production',
+                        to: 'syed87244@gmail.com',
+                        body: 'Failure! Please check the logs.',
+                        attachLog: true
+                    )
+                }
         }
     }
 }
