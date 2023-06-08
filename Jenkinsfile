@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the code using Maven'
+                echo 'Building the code'
             }
         }
         stage('Unit and Integration Tests') {
             steps {
-                echo 'Running unit tests using JUnit'
+                echo 'Running unit tests'
             }
             post {
                 always {
@@ -31,12 +31,12 @@ pipeline {
         }
         stage('Code Analysis') {
             steps {
-                echo 'Analyzing the code using SonarQube'
+                echo 'Analyzing the code'
             }
         }
         stage('Security Scan') {
             steps {
-                echo 'Performing a security scan on the code using OWASP ZAP'
+                echo 'Performing a security'
             }
             post {
                 always {
@@ -59,12 +59,12 @@ pipeline {
         }
         stage('Deploy to Staging') {
             steps {
-                echo 'Deploying the application to an AWS EC2.'
+                echo 'Deploying the application'
             }
         }
         stage('Integration Tests on Staging') {
             steps {
-                echo 'Running integration tests on the staging environment using Selenium'
+                echo 'Running integration tests on the staging environment'
             }
             post {
                 always {
@@ -87,7 +87,7 @@ pipeline {
         }
         stage('Deploy to Production') {
             steps {
-                echo 'Deploying the application to an AWS.'
+                echo 'Deploying the application'
             }
         }
     }
